@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'GIT_SSH_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
+        string(name: 'SOLUTION_PATH', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
+        string(name: 'TEST_PROJECT_PATH', defaultValue: 'WebApi.Tests/WebApi.Tests.csproj', description: 'Path to Tests project')
+        choice(name: "Environment", choices: ["build","test"],description : 'Select Environment to run')
+    }
+    stages {
+        stage('build') {
+            when {
+                expression {
+                  params.Environment == 'build';
+                }
+            }
+            steps {
+                sh '''
+                dotnet restore ${SOLUTION_PATH} --source https://api.nuget.org/v3/index/json
+                dotnet build ${SOLUTION_PATH} -p:Configuration=release -v:n
+                '''
+            }
+        }
+        stage('test') {
+            when {
+                expression {
+                  params.Environment == 'test';
+                }
+            }
+            steps {
+               sh'''
+               dotnet test ${TEST_PROJECT_PATH}
+               '''               
+            }
+        }
+    }
+}
