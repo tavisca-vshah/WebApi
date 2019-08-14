@@ -28,6 +28,7 @@ pipeline {
             }
             steps {
                sh'''
+            dotnet build ${SOLUTION_PATH} -p:Configuration=release -v:n
                dotnet test ${TEST_PROJECT_PATH}
                '''               
             }
