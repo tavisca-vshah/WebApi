@@ -1,14 +1,14 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'GIT_SSH_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
+        string(name: 'GIT_REPO_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
             string(name: 'SOLUTION_PATH', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
         }
         stages {
 
             stage("checkout git"){
                 steps {
-                    git '$GIT_REPO'
+                    git '$GIT_REPO_PATH'
                 }
             }
             stage("build"){
