@@ -25,10 +25,8 @@ pipeline {
             stage("deploy"){
                 steps {
                     powershell '''
-                    dotnet build $($env:SOLUTION_PATH) -p:Configuration=release -v:n
-                    dotnet test $($env:SOLUTION_PATH)
-                    dotnet publish $($env:SOLUTION_PATH) -c Release
-                    compress-archive WebApi/bin/Release/netcoreapp2.1/publish/ artifact.zip -Update
+                    expand-archive ../vikram_webapi_build_deploy/artifact.zip ./
+                    dotnet publish/WebApi.dll
                     '''
                 }
             }
