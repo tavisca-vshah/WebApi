@@ -3,35 +3,26 @@ pipeline {
     parameters {
         string(name: 'GIT_SSH_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
         string(name: 'SOLUTION_PATH', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
-        string(name: 'TEST_PROJECT_PATH', defaultValue: 'WebApi.Tests/WebApi.Tests.csproj', description: 'Path to Tests project')
-        choice(name: "Environment", choices: ["build","test"],description : 'Select Environment to run')
     }
     stages {
-        stage('build') {
-            when {
-                expression {
-                  params.Environment == 'build';
-                }
-            }
-            steps {
-                sh '''
-                dotnet restore ${SOLUTION_PATH} --source https://api.nuget.org/v3/index/json
-                dotnet build ${SOLUTION_PATH} -p:Configuration=release -v:n
-                '''
-            }
+        
+        stage("checkout git"){
+        git '$GIT_REPO'
+    }
+    stage("build"){
+        powershell '''
+        dotnet build $($env:SOLUTION_PATH) -p:Configuration=release -v:n
+        dotnet test $($env:SOLUTION_PATH)
+        dotnet publish $($env:SOLUTION_PATH) -c Release
+        compress-archive WebApi/bin/Release/netcoreapp2.1/publish/ artifact.zip -Update
+        '''
         }
-        stage('test') {
-            when {
-                expression {
-                  params.Environment == 'test';
-                }
-            }
-            steps {
-               sh'''
-            dotnet build ${SOLUTION_PATH} -p:Configuration=release -v:n
-               dotnet test ${TEST_PROJECT_PATH}
-               '''               
-            }
-        }
+    
+    stage("deploy"){
+        powershell '''
+        expand-archive ../vikram_webapi_build_deploy/artifact.zip ./ -Force
+        dotnet publish/WebApi.dll
+        '''
+    }
     }
 }
