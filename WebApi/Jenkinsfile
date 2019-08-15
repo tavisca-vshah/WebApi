@@ -25,7 +25,7 @@ pipeline {
             stage("deploy"){
                 steps {
                     powershell '''
-                    expand-archive ../vikram_webapi_build_deploy/artifact.zip ./
+                    expand-archive ../vikram_webapi_build_deploy/artifact.zip ./ -Force
                     dotnet publish/WebApi.dll
                     '''
                 }
