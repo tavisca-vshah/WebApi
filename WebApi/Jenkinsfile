@@ -2,21 +2,10 @@ pipeline {
     agent any
     parameters {
         string(name: 'GIT_SSH_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
-        string(name: 'SOLUTION_PATH', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
-    }
-    stages {
-        
-        stage("checkout git"){
-            steps {
-                git '$GIT_REPO'
-                }pipeline {
-    agent any
-    parameters {
-        string(name: 'GIT_SSH_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
             string(name: 'SOLUTION_PATH', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
         }
         stages {
-            
+
             stage("checkout git"){
                 steps {
                     git '$GIT_REPO'
@@ -32,7 +21,7 @@ pipeline {
                     '''
                 }
             }
-            
+
             stage("deploy"){
                 steps {
                     powershell '''
@@ -43,31 +32,6 @@ pipeline {
                     '''
                 }
             }
-        }
-    }
-}
-        }
-    stage("build"){
-        steps {
-            powershell '''
-            dotnet build $($env:SOLUTION_PATH) -p:Configuration=release -v:n
-            dotnet test $($env:SOLUTION_PATH)
-            dotnet publish $($env:SOLUTION_PATH) -c Release
-            compress-archive WebApi/bin/Release/netcoreapp2.1/publish/ artifact.zip -Update
-            '''
-        }
-    }
-    
-    stage("deploy"){
-        steps {
-            powershell '''
-            dotnet build $($env:SOLUTION_PATH) -p:Configuration=release -v:n
-            dotnet test $($env:SOLUTION_PATH)
-            dotnet publish $($env:SOLUTION_PATH) -c Release
-            compress-archive WebApi/bin/Release/netcoreapp2.1/publish/ artifact.zip -Update
-            '''
-       }
-  }
-    }
+            
     }
 }
