@@ -1,0 +1,11 @@
+# get image of asp dotnet core docker image 
+FROM mcr.microsoft.com/dotnet/core/aspnet
+# Argument Required during docker build command
+ARG project_name
+# make app as working directory
+WORKDIR /app
+# copy Artifacts to working directory
+COPY /publish/. /app
+EXPOSE 80
+ENV env_project_name=$project_name
+CMD ["sh","-c","dotnet ${env_project_name}"]

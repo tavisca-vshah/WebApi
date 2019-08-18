@@ -32,3 +32,20 @@ C:\C# training project\HttpApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests
 C:\C# training project\HttpApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.csproj.CopyComplete
 C:\C# training project\HttpApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.dll
 C:\C# training project\HttpApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.pdb
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.Tests.deps.json
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.Tests.runtimeconfig.json
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.Tests.runtimeconfig.dev.json
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.Tests.dll
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.Tests.pdb
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.dll
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\bin\Debug\netcoreapp2.1\WebApi.pdb
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.csprojAssemblyReference.cache
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.csproj.CoreCompileInputs.cache
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.AssemblyInfoInputs.cache
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.AssemblyInfo.cs
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.csproj.CopyComplete
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.dll
+C:\Users\vshah\Desktop\WebApi\WebApi.Tests\obj\Debug\netcoreapp2.1\WebApi.Tests.pdb

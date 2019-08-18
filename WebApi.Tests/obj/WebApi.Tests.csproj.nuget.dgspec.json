@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C# training project\\HttpApi\\WebApi.Tests\\WebApi.Tests.csproj": {}
+    "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi.Tests\\WebApi.Tests.csproj": {}
   },
   "projects": {
-    "C:\\C# training project\\HttpApi\\WebApi.Tests\\WebApi.Tests.csproj": {
+    "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi.Tests\\WebApi.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C# training project\\HttpApi\\WebApi.Tests\\WebApi.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi.Tests\\WebApi.Tests.csproj",
         "projectName": "WebApi.Tests",
-        "projectPath": "C:\\C# training project\\HttpApi\\WebApi.Tests\\WebApi.Tests.csproj",
+        "projectPath": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi.Tests\\WebApi.Tests.csproj",
         "packagesPath": "C:\\Users\\vshah\\.nuget\\packages\\",
-        "outputPath": "C:\\C# training project\\HttpApi\\WebApi.Tests\\obj\\",
+        "outputPath": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\C# training project\\HttpApi\\WebApi\\WebApi.csproj": {
-                "projectPath": "C:\\C# training project\\HttpApi\\WebApi\\WebApi.csproj"
+              "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi\\WebApi.csproj": {
+                "projectPath": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi\\WebApi.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\C# training project\\HttpApi\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C# training project\\HttpApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\C# training project\\HttpApi\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\vshah\\.nuget\\packages\\",
-        "outputPath": "C:\\C# training project\\HttpApi\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\vshah\\Desktop\\WebApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
