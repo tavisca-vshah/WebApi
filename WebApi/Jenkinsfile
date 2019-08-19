@@ -15,10 +15,10 @@ pipeline {
             stage("build"){
                 steps {
                     powershell '''
-                    dotnet C:\install_directory\SonarScanner.MSBuild.dll begin /k:"webapi" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="$($env:SONAR_PROJECT_TOKEN)"
+                    dotnet C:/install_directory/SonarScanner.MSBuild.dll begin /k:"webapi" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="$($env:SONAR_PROJECT_TOKEN)"
                     dotnet build $($env:SOLUTION_PATH) -p:Configuration=release -v:n
                     dotnet test $($env:SOLUTION_PATH)
-                    dotnet C:\install_directory\SonarScanner.MSBuild.dll end /d:sonar.login="$($env:SONAR_PROJECT_TOKEN)"
+                    dotnet C:/install_directory/SonarScanner.MSBuild.dll end /d:sonar.login="$($env:SONAR_PROJECT_TOKEN)"
                     dotnet publish $($env:SOLUTION_PATH) -c Release
                   
                     '''
