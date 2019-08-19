@@ -1,8 +1,9 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'GIT_REPO_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
+            string(name: 'GIT_REPO_PATH', defaultValue: 'https://github.com/tavisca-vshah/WebApi.git', description: 'Value For Git Repo')
             string(name: 'SOLUTION_PATH', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
+            string(name: 'SONAR_PROJECT_TOKEN', defaultValue: 'WebApi/WebApi.sln', description: 'Path to the Solution')
         }
         stages {
 
@@ -14,22 +15,14 @@ pipeline {
             stage("build"){
                 steps {
                     powershell '''
+                    dotnet C:\install_directory\SonarScanner.MSBuild.dll begin /k:"webapi" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="$($env:SONAR_PROJECT_TOKEN)"
                     dotnet build $($env:SOLUTION_PATH) -p:Configuration=release -v:n
                     dotnet test $($env:SOLUTION_PATH)
+                    dotnet C:\install_directory\SonarScanner.MSBuild.dll end /d:sonar.login="$($env:SONAR_PROJECT_TOKEN)"
                     dotnet publish $($env:SOLUTION_PATH) -c Release
-                    compress-archive WebApi/bin/Release/netcoreapp2.1/publish/ artifact.zip -Update
+                  
                     '''
                 }
-            }
-
-            stage("deploy"){
-                steps {
-                    powershell '''
-                    expand-archive ../vikram_webapi_build_deploy/artifact.zip ./ -Force
-                    dotnet publish/WebApi.dll
-                    '''
-                }
-            }
-            
+            }       
     }
 }
